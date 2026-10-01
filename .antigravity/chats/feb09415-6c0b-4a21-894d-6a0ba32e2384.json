@@ -3,7 +3,7 @@
   "name": "how do I add folders from",
   "createdAt": "2026-10-01T09:02:38.030Z",
   "filename": "feb09415-6c0b-4a21-894d-6a0ba32e2384.json",
-  "geminiStarted": false,
+  "geminiStarted": true,
   "messages": [
     {
       "id": "b22eb0a9-da55-43bc-bd91-5b6b3bd38187",
@@ -15,6 +15,18 @@
       "parent_message_id": null,
       "created_at": "2026-10-01T09:05:28.723Z",
       "sender": "ios",
+      "is_cancelled": false
+    },
+    {
+      "id": "7791bb7c-6666-4d3c-9f19-0a7465d7cd85",
+      "role": "agent",
+      "content": "Here are the easiest ways to add folders or files from your phone to this project:\n\n---\n\n### Method 1: Upload Directly in Chat (Easiest)\n1. Tap the **+** (attachment or paperclip) button next to the chat box on your phone.\n2. Select the files or images from your phone's storage.\n3. Send them in a message and tell me where you'd like them placed (for example: *\"Put these inside an `assets` folder\"*).\n4. I will create the folder and add the files directly to your project.\n\n---\n\n### Method 2: Upload via GitHub Mobile\nSince your project is linked to GitHub (`quelamar11/first-project`):\n1. Open your mobile browser and go to your repository:  \n   `https://github.com/quelamar11/first-project`\n2. Tap **Add file** $\\rightarrow$ **Upload files**.\n3. Choose the files/folders from your phone and tap **Commit changes**.\n4. The files will automatically sync with this project.\n\n---\n\n### Method 3: Share a Cloud Link (Google Drive, Dropbox, etc.)\n1. Upload your folder to **Google Drive**, **iCloud**, **Dropbox**, or **WeTransfer** on your phone.\n2. Make sure the link sharing is set to *\"Anyone with the link can view\"* and paste the link here in chat.\n3. I can download the folder and add it to your project for you.",
+      "status": "completed",
+      "model": "gemini-3.6-flash-high",
+      "client_type": "gemini-bridge",
+      "parent_message_id": "b22eb0a9-da55-43bc-bd91-5b6b3bd38187",
+      "created_at": "2026-10-01T09:06:14.253Z",
+      "sender": "macOS",
       "is_cancelled": false
     }
   ]
