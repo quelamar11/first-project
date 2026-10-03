@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Agent — Architectural Triad Dashboard</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: #111827;
+      --card-border: #1f293d;
+      --cyan: #06b6d4;
+      --blue: #3b82f6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --text: #f1f5f9;
+      --subtext: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px 16px;
+      line-height: 1.5;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    header {
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      margin-bottom: 8px;
+    }
+    h1 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    p.lead { color: var(--subtext); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px; }
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .card-desc { font-size: 12px; color: var(--subtext); margin-bottom: 12px; flex: 1; }
+    .status-tag {
+      font-size: 11px;
+      font-weight: 600;
+      font-family: monospace;
+      padding: 2px 6px;
+      border-radius: 4px;
+      align-self: flex-start;
+    }
+    .status-active { background: rgba(6, 182, 212, 0.15); color: var(--cyan); border: 1px solid rgba(6, 182, 212, 0.3); }
+    .status-runtime { background: rgba(59, 130, 246, 0.15); color: var(--blue); border: 1px solid rgba(59, 130, 246, 0.3); }
+    .status-archived { background: rgba(245, 158, 11, 0.15); color: var(--amber); border: 1px solid rgba(245, 158, 11, 0.3); }
+    .section-title { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: #fff; }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    ul.check-list { list-style: none; }
+    ul.check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: #cbd5e1;
+    }
+    .check-icon { color: var(--emerald); font-weight: bold; }
+    pre {
+      background: #050811;
+      border: 1px solid #1a2234;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #93c5fd;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Architecture Consolidated</div>
+      <h1>Engineering Agent Triad</h1>
+      <p class="lead">Primary Orchestrator, External Runtime SDK, and Historical Reference Workspaces.</p>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <div>
+          <div class="card-title">🚀 engineering-agent</div>
+          <p class="card-desc">Primary repository. Modular engine (agent, sdlc, memory, runtime, models), thin CLI launcher, and headless API boundary.</p>
+        </div>
+        <span class="status-tag status-active">PRIMARY REPO</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-title">📦 antigravity-sdk-python</div>
+          <p class="card-desc">External runtime & SDK layer (<code>google-antigravity</code>). Kept independent, never forked into the agent tree.</p>
+        </div>
+        <span class="status-tag status-runtime">RUNTIME DEPENDENCY</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-title">🏛️ first-project</div>
+          <p class="card-desc">Historical Antigravity workspace. Ephemeral chat sessions isolated; configurations extracted.</p>
+        </div>
+        <span class="status-tag status-archived">REFERENCE ONLY</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="section-title">Consolidation Verification Status</div>
+      <ul class="check-list">
+        <li><span class="check-icon">✓</span> <span><strong>Engine Modularization:</strong> Decomposed legacy monoliths into single-responsibility domains (<code>engine/agent/</code>, <code>engine/sdlc/</code>, <code>engine/memory/</code>, <code>engine/runtime/</code>, <code>engine/models/</code>).</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Model Provider Interface:</strong> Abstracted <code>ModelProvider</code> in <code>engine/runtime/model.py</code> supporting Gemini and Antigravity.</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Git & Database Hygiene:</strong> Untracked runtime <code>essence.db</code> and added comprehensive <code>.gitignore</code> rules.</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Thin CLI & Headless API:</strong> Rewrote <code>main.py</code> as CLI launcher and <code>server.py</code> as REST service boundary.</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Target Workspace Isolation:</strong> Dedicated <code>workspace/essence/</code> directory for building Essence.</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Automated Verification:</strong> All 9 engine unit tests passing; Next.js 15 production build compiled and verified with zero type errors.</span></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="section-title">Quick Commands on Host (Intel MacBook Pro)</div>
+      <pre><code># Run CLI query
+python3 main.py "Prioritize backlog items for Sprint 2"
+
+# Start Headless REST Server
+python3 server.py
+
+# Run Full Test Suite
+python3 -m unittest discover -s tests -p "test_*.py"</code></pre>
+    </div>
+  </div>
+</body>
+</html>
